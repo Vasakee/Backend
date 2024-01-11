@@ -21,6 +21,9 @@ app.use(express.json())
 
 app.use(cors())
 
+app.get('/', (req, res) => {
+    res.send('Api running successfully')
+})
 app.use('/api/Citizens', RegisterRoutes)
 
 /*const ___dirname1 = path.resolve();
