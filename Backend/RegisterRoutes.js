@@ -3,6 +3,6 @@ const { registerCitizen, getCitizens, getCitizen } = require('./RegisterControll
 
 RegisterRoutes.post('/', (registerCitizen))
 RegisterRoutes.get('/', (getCitizens))
-RegisterRoutes.post('/_id', (getCitizen))
+RegisterRoutes.get('/:citizenId', (getCitizen))
 
 module.exports = RegisterRoutes

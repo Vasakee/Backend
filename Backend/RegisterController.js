@@ -52,9 +52,9 @@ const getCitizens = expressAsyncHandler(async (req, res) => {
 })
 
 const getCitizen = expressAsyncHandler(async (req, res) => {
-    const { _id } = req.body
+    const { citizenId } = req.params
     try {
-        const Candidate = await Register.findById({ _id })
+        const Candidate = await Register.findOne({ _id: citizenId })
         if (Candidate) {
             res.status(200).json({
                 _id: Candidate._id,
@@ -75,6 +75,7 @@ const getCitizen = expressAsyncHandler(async (req, res) => {
         res.status(400)
         throw new Error(error.message)
     }
+
 })
 
 module.exports = { registerCitizen, getCitizens, getCitizen }

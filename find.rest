@@ -1,0 +1,1 @@
+GET http://localhost:3001/api/Citizens/648c3345cae83f6be4da6fca

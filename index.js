@@ -4,6 +4,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const RegisterRoutes = require('./Backend/RegisterRoutes')
 const path = require('path')
+const bodyParser = require('body-parser')
 
 const app = express()
 dotenv.config()
@@ -18,6 +19,8 @@ mongoose.connect(process.env.MONGO_URI, /*{ useNewUrlParser: true, useUnifiedTop
 const PORT = process.env.PORT
 
 app.use(express.json())
+
+app.use(bodyParser.json())
 
 app.use(cors())
 
